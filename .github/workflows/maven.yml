@@ -32,7 +32,7 @@ jobs:
     - name: Build with Maven
       run: 
         echo Testing Project
-        cd "codebehind/JavaFXSample/
+        cd "codebehind/JavaFXSample/"
         mvn --batch-mode --update-snapshots clean verify
         cd ../..
 
