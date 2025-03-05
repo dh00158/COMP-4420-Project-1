@@ -50,6 +50,29 @@ public class MainWindow {
 			errorBox.showAndWait();
 		}
 	}
+	@FXML
+	void addFacility(ActionEvent event) {
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(Main.class.getResource(Main.ADD_ITEM_WINDOW_RESOURCE));
+			loader.load();
+			Parent parent = loader.getRoot();
+			Scene scene = new Scene(parent);
+			Stage addItemStage = new Stage();
+			addItemStage.setTitle(Main.WINDOW_TITLE);
+			addItemStage.setScene(scene);
+			addItemStage.initModality(Modality.APPLICATION_MODAL);
+
+			NewFacilityWindow controller = (NewFacilityWindow) loader.getController();
+			controller.setItemList(this.users.getItems());
+
+			addItemStage.showAndWait();
+		} catch (IOException error) {
+			Alert errorBox = new Alert(AlertType.ERROR);
+			errorBox.setContentText("Unable to open add window");
+			errorBox.showAndWait();
+		}
+	}
 
 	@FXML
 	void removeItem(ActionEvent event) {

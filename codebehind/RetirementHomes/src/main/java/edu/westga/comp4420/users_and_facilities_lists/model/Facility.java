@@ -10,24 +10,24 @@ public final class OwnedFacility {
 
 	private final String homeName;
 	private final String address;
-	private final int zipCode;
+	private final String owner;
 	
 	/**
 	 * Create and initialize a new facility with the provided information.
 	 * 
 	 * @precondition homeName != null &&
-	 *				 !firstName.isEmpty() &&
+	 *				 !homeName.isEmpty() &&
 	 * 				 !address.isEmpty() &&
-	 * 				 zipCode > 0
+	 * 				 owner > 0
 	 * @postcondition getHomeName() == homeName &&
 	 * 				  getAddress() == lastName &&
-	 * 				  getEmail() == email
+	 * 				  getOwner() == email
 	 * 
 	 * @param homeName the name of the facility
 	 * @param address the address of the facility
-	 * @param zipCode the zip code of the facility
+	 * @param owner the owner of the facility
 	 */
-	public Facility(String homeName, String address, int zipCode) {
+	public Facility(String homeName, String address, String owner) {
 		if (homeName == null) {
 			throw new IllegalArgumentException("Must provide a name, but first name was null.");
 		}
@@ -40,18 +40,15 @@ public final class OwnedFacility {
 		if (address.isEmpty()) {
 			throw new IllegalArgumentException("Must provide a address with at least one character");
 		}
-		if (zipCode == null) {
-			throw new IllegalArgumentException("Must provide a zip code, but zip code was null.");
+		if (owner == null) {
+			throw new IllegalArgumentException("Must provide a name, but name was null.");
 		}
-		if (zipCode < 0) {
-			throw new IllegalArgumentException("Must provide a valid zip code");
+		if (owner.isEmpty()) {
+			throw new IllegalArgumentException("Must provide a name for the owner")
 		}
-		if (zipCode < 10000 || number > 99999) {
-        	throw new IllegalArgumentException("Zip code must be 5 digits long.");
-    	}
 		this.homeName = homeName;
 		this.address = address;
-		this.zipCode = zipCode;
+		this.owner = owner;
 	}
 	
 	/**
@@ -86,12 +83,12 @@ public final class OwnedFacility {
 	 * 
 	 * @return the amount currently in the cart for the new grocery item
 	 */
-	public int getZipCode() {
-		return this.zipCode;
+	public int getOwner() {
+		return this.owner;
 	}
 	
 	@Override
 	public String toString() {
-		return this.homeName + this.address + "/" + this.zipCode;
+		return this.homeName + this.address + "/" + this.owner;
 	}
 }
