@@ -17,7 +17,7 @@ import edu.westga.comp4420.users_and_facilities_lists.model.UserAccount;
  * @author	Comp 4420
  * @version Spring 2025
  */
-public class AddItemWindow {   
+public class NewUserWindow {   
 	@FXML private AnchorPane guiPane;
 	@FXML private TextField firstName;
     @FXML private TextField lastName;
@@ -34,8 +34,9 @@ public class AddItemWindow {
 		try {
 			String firstName = this.firstName.getText();
 			String lastName = this.lastName.getText();
-			UserAccount newUser = new UserAccount(firstName, lastName, this.email);
-			this.Users.add(newUser);
+			String email = this.email.getText();
+			UserAccount newUser = new UserAccount(firstName, lastName, email);
+			this.users.add(newUser);
 			this.closeWindow();
 		} catch (NumberFormatException error) {
 			Alert errorBox = new Alert(AlertType.ERROR);
@@ -56,7 +57,7 @@ public class AddItemWindow {
 	
 	
 	public void setItemList(List<UserAccount> users) {
-		this.Users = users;
+		this.users = users;
 	}
 	
 	@FXML

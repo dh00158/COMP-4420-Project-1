@@ -1,4 +1,4 @@
-package edu.westga.comp4420.users_and_facilities.model;
+package edu.westga.comp4420.users_and_facilities_lists.model;
 
 /**
  * Stores the user accounts that are made.

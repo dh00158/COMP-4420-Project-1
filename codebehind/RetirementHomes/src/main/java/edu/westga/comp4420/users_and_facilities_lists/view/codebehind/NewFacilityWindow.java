@@ -17,7 +17,7 @@ import edu.westga.comp4420.users_and_facilities_lists.model.Facility;
  * @author	Comp 4420
  * @version Spring 2025
  */
-public class AddItemWindow {   
+public class NewFacilityWindow {   
 	@FXML private AnchorPane guiPane;
 	@FXML private TextField homeName;
     @FXML private TextField address;
@@ -34,8 +34,9 @@ public class AddItemWindow {
 		try {
 			String homeName = this.homeName.getText();
 			String address = this.address.getText();
-			Facility newFacility = new Facility(homeName, address, this.owner);
-			this.Users.add(newFacility);
+			String owner = this.owner.getText();
+			Facility newFacility = new Facility(homeName, address, owner);
+			this.facilities.add(newFacility);
 			this.closeWindow();
 		} catch (NumberFormatException error) {
 			Alert errorBox = new Alert(AlertType.ERROR);

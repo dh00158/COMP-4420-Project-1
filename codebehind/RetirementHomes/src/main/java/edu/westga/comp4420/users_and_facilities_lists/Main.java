@@ -1,4 +1,4 @@
-package edu.westga.comp4420.grocery_list;
+package edu.westga.comp4420.users_and_facilities_lists;
 
 import java.io.IOException;
 
@@ -15,10 +15,10 @@ import javafx.scene.Scene;
  * @version Spring 2025
  */
 public class Main extends Application {
-	public static final String WINDOW_TITLE = "JavaFX Sample";
+	public static final String WINDOW_TITLE = "Retirement Homes";
 	public static final String MAIN_WINDOW_RESOURCE = "view/codebehind/MainWindow.fxml";
-	public static final String ADD_ITEM_WINDOW_RESOURCE = "view/codebehind/AddItemWindow.fxml";
-
+	public static final String ADD_USER_WINDOW_RESOURCE = "view/codebehind/AddUserWindow.fxml";
+	public static final String ADD_FACILITY_WINDOW_RESOURCE = "view/codebehind/AddFacilityWindow.fxml";
 	/**
 	 * JavaFX entry point.
 	 *

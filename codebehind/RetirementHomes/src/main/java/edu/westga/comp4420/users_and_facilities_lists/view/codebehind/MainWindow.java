@@ -16,6 +16,7 @@ import java.io.IOException;
 
 import edu.westga.comp4420.users_and_facilities_lists.model.UserAccount;
 import edu.westga.comp4420.users_and_facilities_lists.Main;
+import edu.westga.comp4420.users_and_facilities_lists.model.Facility;
 
 /**
  * CodeBehind To Handle Processing for the MainWindow
@@ -26,12 +27,13 @@ import edu.westga.comp4420.users_and_facilities_lists.Main;
 public class MainWindow {   
 	@FXML private ListView<UserAccount> users;
 	@FXML private AnchorPane guiPane;
+	@FXML private ListView<Facility> facilities;
 
 	@FXML
 	void addUser(ActionEvent event) {
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource(Main.ADD_ITEM_WINDOW_RESOURCE));
+			loader.setLocation(Main.class.getResource(Main.ADD_USER_WINDOW_RESOURCE));
 			loader.load();
 			Parent parent = loader.getRoot();
 			Scene scene = new Scene(parent);
@@ -40,7 +42,7 @@ public class MainWindow {
 			addItemStage.setScene(scene);
 			addItemStage.initModality(Modality.APPLICATION_MODAL);
 
-			NewUserWindow controller = (NewUserWindowWindow) loader.getController();
+			NewUserWindow controller = (NewUserWindow) loader.getController();
 			controller.setItemList(this.users.getItems());
 
 			addItemStage.showAndWait();
@@ -54,7 +56,7 @@ public class MainWindow {
 	void addFacility(ActionEvent event) {
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource(Main.ADD_ITEM_WINDOW_RESOURCE));
+			loader.setLocation(Main.class.getResource(Main.ADD_FACILITY_WINDOW_RESOURCE));
 			loader.load();
 			Parent parent = loader.getRoot();
 			Scene scene = new Scene(parent);
@@ -64,7 +66,7 @@ public class MainWindow {
 			addItemStage.initModality(Modality.APPLICATION_MODAL);
 
 			NewFacilityWindow controller = (NewFacilityWindow) loader.getController();
-			controller.setItemList(this.users.getItems());
+			controller.setItemList(this.facilities.getItems());
 
 			addItemStage.showAndWait();
 		} catch (IOException error) {
@@ -75,10 +77,17 @@ public class MainWindow {
 	}
 
 	@FXML
-	void removeItem(ActionEvent event) {
+	void removeUser(ActionEvent event) {
 		UserAccount selectedUser = this.users.getSelectionModel().getSelectedItem();
-		if (selectedItem != null) {
-			this.users.getItems().remove(selectedItem);
+		if (selectedUser != null) {
+			this.users.getItems().remove(selectedUser);
+		}
+	}
+	@FXML
+	void removeFacility(ActionEvent event) {
+		Facility selectedFacility = this.facilities.getSelectionModel().getSelectedItem();
+		if (selectedFacility != null) {
+			this.facilities.getItems().remove(selectedFacility);
 		}
 	}
 	
@@ -86,5 +95,6 @@ public class MainWindow {
 	void initialize() {
 		assert this.users != null : "fx:id=\"users\" was not injected: check your FXML file 'MainWindow.fxml'.";
 		assert this.guiPane != null : "fx:id=\"guiPane\" was not injected: check your FXML file 'MainWindow.fxml'.";
+		assert this.facilities != null : "fx:id=\"facilities\" was not injected: check your FXML file 'MainWindow.fxml'.";
 	}
 }

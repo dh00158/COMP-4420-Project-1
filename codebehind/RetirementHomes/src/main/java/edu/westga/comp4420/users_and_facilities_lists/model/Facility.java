@@ -1,4 +1,4 @@
-package edu.westga.comp4420.users_and_facilities.model;
+package edu.westga.comp4420.users_and_facilities_lists.model;
 
 /**
  * Stores the usable facilities that are made.
@@ -6,7 +6,7 @@ package edu.westga.comp4420.users_and_facilities.model;
  * @author	Comp 4420
  * @version Spring 2025
  */
-public final class OwnedFacility {   
+public final class Facility {   
 
 	private final String homeName;
 	private final String address;
@@ -44,7 +44,7 @@ public final class OwnedFacility {
 			throw new IllegalArgumentException("Must provide a name, but name was null.");
 		}
 		if (owner.isEmpty()) {
-			throw new IllegalArgumentException("Must provide a name for the owner")
+			throw new IllegalArgumentException("Must provide a name for the owner");
 		}
 		this.homeName = homeName;
 		this.address = address;
@@ -83,7 +83,7 @@ public final class OwnedFacility {
 	 * 
 	 * @return the amount currently in the cart for the new grocery item
 	 */
-	public int getOwner() {
+	public String getOwner() {
 		return this.owner;
 	}
 	
