@@ -93,8 +93,8 @@ public class MainWindow {
 	
 	@FXML
 	void initialize() {
-		assert this.users != null : "fx:id=\"users\" was not injected: check your FXML file 'MainWindow.fxml'.";
-		assert this.guiPane != null : "fx:id=\"guiPane\" was not injected: check your FXML file 'MainWindow.fxml'.";
 		assert this.facilities != null : "fx:id=\"facilities\" was not injected: check your FXML file 'MainWindow.fxml'.";
+        assert this.guiPane != null : "fx:id=\"guiPane\" was not injected: check your FXML file 'MainWindow.fxml'.";
+        assert this.users != null : "fx:id=\"users\" was not injected: check your FXML file 'MainWindow.fxml'.";
 	}
 }

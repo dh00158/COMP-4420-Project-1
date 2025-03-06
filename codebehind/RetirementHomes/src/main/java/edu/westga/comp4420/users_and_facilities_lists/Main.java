@@ -17,8 +17,8 @@ import javafx.scene.Scene;
 public class Main extends Application {
 	public static final String WINDOW_TITLE = "Retirement Homes";
 	public static final String MAIN_WINDOW_RESOURCE = "view/codebehind/MainWindow.fxml";
-	public static final String ADD_USER_WINDOW_RESOURCE = "view/codebehind/AddUserWindow.fxml";
-	public static final String ADD_FACILITY_WINDOW_RESOURCE = "view/codebehind/AddFacilityWindow.fxml";
+	public static final String ADD_USER_WINDOW_RESOURCE = "view/codebehind/NewUserWindow.fxml";
+	public static final String ADD_FACILITY_WINDOW_RESOURCE = "view/codebehind/NewFacilityWindow.fxml";
 	/**
 	 * JavaFX entry point.
 	 *

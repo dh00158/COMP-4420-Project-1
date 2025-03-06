@@ -16,14 +16,14 @@ class TestConstructor {
 	void testValidInput(String firstName, String lastName, String email) {
 		UserAccount testUser = new UserAccount(firstName, lastName, email);
 		
-		assertEquals(firstName, result.getFirstName(), "checking first name of the account");
-		assertEquals(lastName, result.getLastName(), "checking last name of account");
-		assertEquals(email, result.getEmail(), "checking the email of the account");
+		assertEquals(firstName, testUser.getFirstName(), "checking first name of the account");
+		assertEquals(lastName, testUser.getLastName(), "checking last name of account");
+		assertEquals(email, testUser.getEmail(), "checking the email of the account");
 	}
 	
 	@ParameterizedTest
 	@CsvSource({", 1, 1", "'', 1, 1", "bob, 0, 0", "bob, 1, -1"})
-	void testInvalidInput(String name, String lastName, String email) {
+	void testInvalidInput(String firstName, String lastName, String email) {
 		assertThrows(IllegalArgumentException.class, ()->{new UserAccount(firstName, lastName, email);});
 	}
 }
