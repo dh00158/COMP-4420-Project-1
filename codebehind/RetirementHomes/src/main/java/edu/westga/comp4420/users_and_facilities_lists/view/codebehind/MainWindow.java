@@ -48,7 +48,7 @@ public class MainWindow {
 			addItemStage.showAndWait();
 		} catch (IOException error) {
 			Alert errorBox = new Alert(AlertType.ERROR);
-			errorBox.setContentText("Unable to open add window");
+			errorBox.setContentText("Unable to open add window" + error.getMessage());
 			errorBox.showAndWait();
 		}
 	}

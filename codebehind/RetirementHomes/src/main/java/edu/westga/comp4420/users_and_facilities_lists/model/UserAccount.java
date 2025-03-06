@@ -92,6 +92,6 @@ public final class UserAccount {
 	
 	@Override
 	public String toString() {
-		return this.firstName + this.lastName + "/" + this.email;
+		return "Name: " + this.firstName + " " + this.lastName + "/" + this.email;
 	}
 }

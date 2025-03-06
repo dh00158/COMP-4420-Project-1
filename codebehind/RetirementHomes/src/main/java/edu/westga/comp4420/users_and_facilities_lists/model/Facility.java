@@ -89,6 +89,6 @@ public final class Facility {
 	
 	@Override
 	public String toString() {
-		return this.homeName + this.address + "/" + this.owner;
+		return this.homeName + " ," + this.address + ": Owned by " + this.owner;
 	}
 }
