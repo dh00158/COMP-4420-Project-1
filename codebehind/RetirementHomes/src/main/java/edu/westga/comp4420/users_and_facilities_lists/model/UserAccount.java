@@ -17,7 +17,9 @@ public final class UserAccount {
 	 * 
 	 * @precondition firstName != null &&
 	 *				 !firstName.isEmpty() &&
+	 *				 !lastName != null &&
 	 * 				 !lastName.isEmpty() &&
+	 * 				 !email != null &&
 	 * 				 !email.isEmpty()
 	 * @postcondition getFirstName() == firstName &&
 	 * 				  getLastName() == lastName &&
@@ -84,7 +86,7 @@ public final class UserAccount {
 	 * @precondition none
 	 * @postcondition none
 	 * 
-	 * @return the amount currently in the cart for the new grocery item
+	 * @return the email of the user
 	 */
 	public String getEmail() {
 		return this.email;
@@ -92,6 +94,6 @@ public final class UserAccount {
 	
 	@Override
 	public String toString() {
-		return this.firstName + this.lastName + "/" + this.email;
+		return "Name: " + this.firstName + " " + this.lastName + "/" + this.email;
 	}
 }

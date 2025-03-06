@@ -9,7 +9,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 import edu.westga.comp4420.users_and_facilities_lists.model.UserAccount;
 
-class TestConstructor {
+class TestUserConstructor {
 	
 	@ParameterizedTest
 	@CsvSource({"bob, ross, bob@ross.com"})

@@ -17,7 +17,9 @@ public final class Facility {
 	 * 
 	 * @precondition homeName != null &&
 	 *				 !homeName.isEmpty() &&
+	 *				 !address != null &&
 	 * 				 !address.isEmpty() &&
+	 * 				 !owner != null &&
 	 * 				 owner > 0
 	 * @postcondition getHomeName() == homeName &&
 	 * 				  getAddress() == lastName &&
@@ -57,7 +59,7 @@ public final class Facility {
 	 * @precondition none
 	 * @postcondition none
 	 * 
-	 * @return the first name for the new user
+	 * @return the name of the facility
 	 */
 	public String getHomeName() {
 		return this.homeName;
@@ -69,19 +71,19 @@ public final class Facility {
 	 * @precondition none
 	 * @postcondition none
 	 * 
-	 * @return the last name of the user
+	 * @return the address of the facility
 	 */
 	public String getAddress() {
 		return this.address;
 	}
 	
 	/**
-	 * Return the zipcode of the facility
+	 * Return the owner of the facility
 	 * 
 	 * @precondition none
 	 * @postcondition none
 	 * 
-	 * @return the amount currently in the cart for the new grocery item
+	 * @return the owner of the facility
 	 */
 	public String getOwner() {
 		return this.owner;
@@ -89,6 +91,6 @@ public final class Facility {
 	
 	@Override
 	public String toString() {
-		return this.homeName + this.address + "/" + this.owner;
+		return this.homeName + " ," + this.address + ": Owned by " + this.owner;
 	}
 }
